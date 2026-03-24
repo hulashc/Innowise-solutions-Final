@@ -6,82 +6,89 @@
 <title>Services — Innowise Solutions</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Source+Sans+3:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#f8fafd;--bg2:#eef3fb;--bg3:#ffffff;
-  --navy:#0a2240;--navy2:#1a3a60;
-  --blue:#1a6fd4;--blue-h:#1558b0;
-  --sky:#e8f2ff;--sky2:#d0e5ff;--teal:#0891b2;
-  --text:#1a2535;--text2:#3d5166;--muted:#6b7f96;
-  --border:#dde6f0;--white:#ffffff;
-  --radius:14px;
-  --sans:'Inter',system-ui,sans-serif;
-  --serif:'Playfair Display',Georgia,serif;
-  --shadow:0 4px 24px rgba(10,34,64,0.09);
-  --shadow-lg:0 12px 48px rgba(10,34,64,0.14);
+  --bg:#f7f9fc;--bg2:#edf2f9;--white:#ffffff;
+  --navy:#0b1f3a;--navy2:#163354;
+  --blue:#0f5fc2;--blue-h:#0c4ea0;--blue-lt:#e8f0fc;--blue-lt2:#cfe0fc;
+  --teal:#0284c7;
+  --text:#0f1e30;--text2:#334d6e;--muted:#607d99;
+  --border:#dae2ed;
+  --radius:10px;--radius-lg:16px;
+  --shadow:0 2px 16px rgba(11,31,58,0.08);
+  --shadow-lg:0 8px 40px rgba(11,31,58,0.13);
+  --font-head:'Barlow',sans-serif;
+  --font-body:'Source Sans 3',sans-serif;
+  --font-mono:'DM Mono',monospace;
+  --h-display:clamp(2.6rem,5vw,4rem);
+  --h-xl:clamp(2rem,3.5vw,3rem);
+  --section-pad:100px;
 }
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-a{color:inherit;text-decoration:none}
-ul{list-style:none}
-::-webkit-scrollbar{width:5px}
-::-webkit-scrollbar-track{background:#eef3fb}
-::-webkit-scrollbar-thumb{background:#b0c4dc;border-radius:4px}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);font-size:1rem;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}ul{list-style:none}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:#edf2f9}::-webkit-scrollbar-thumb{background:#b5c7dc;border-radius:4px}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:900;height:64px;background:rgba(255,255,255,0.92);backdrop-filter:blur(20px) saturate(160%);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 40px;box-shadow:0 1px 12px rgba(10,34,64,0.06)}
-.nav-logo{display:flex;align-items:center;gap:10px;font-size:1rem;font-weight:700;color:var(--navy)}
-.logo-mark{width:34px;height:34px;background:linear-gradient(135deg,var(--blue),var(--teal));border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.85rem;font-weight:700;flex-shrink:0}
+nav{position:fixed;top:0;left:0;right:0;z-index:900;height:68px;background:rgba(255,255,255,0.93);backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 48px;box-shadow:0 1px 8px rgba(11,31,58,0.05)}
+.nav-logo{display:flex;align-items:center;gap:11px;font-family:var(--font-head);font-size:1.1rem;font-weight:700;letter-spacing:-0.02em;color:var(--navy)}
+.logo-mark{width:36px;height:36px;background:linear-gradient(135deg,var(--blue),var(--teal));border-radius:9px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.88rem;font-weight:800;flex-shrink:0;font-family:var(--font-head)}
 .nav-logo span{color:var(--blue)}
 .nav-links{display:flex;gap:36px;align-items:center;position:absolute;left:50%;transform:translateX(-50%)}
-.nav-links a{font-size:0.85rem;font-weight:500;color:var(--text2);transition:color 0.2s;white-space:nowrap}
+.nav-links a{font-family:var(--font-body);font-size:0.9rem;font-weight:500;color:var(--text2);transition:color .2s;white-space:nowrap}
 .nav-links a:hover,.nav-links a.active{color:var(--blue)}
 .nav-right{display:flex;align-items:center;gap:16px}
-.nav-cta{font-size:0.84rem;font-weight:600;color:#fff;background:var(--blue);padding:9px 22px;border-radius:980px;transition:background 0.2s,transform 0.15s}
+.nav-cta{font-family:var(--font-body);font-size:0.87rem;font-weight:600;color:#fff;background:var(--blue);padding:9px 24px;border-radius:6px;transition:background .2s,transform .15s}
 .nav-cta:hover{background:var(--blue-h);transform:translateY(-1px)}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
 .hamburger span{width:22px;height:2px;background:var(--navy);border-radius:2px}
-.mobile-nav{display:none;position:fixed;inset:0;background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);z-index:800;flex-direction:column;align-items:center;justify-content:center;gap:36px}
+.mobile-nav{display:none;position:fixed;inset:0;background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);z-index:800;flex-direction:column;align-items:center;justify-content:center;gap:40px}
 .mobile-nav.open{display:flex}
-.mobile-nav a{font-size:1.4rem;font-weight:300;color:var(--navy)}
+.mobile-nav a{font-family:var(--font-head);font-size:1.6rem;font-weight:600;color:var(--navy)}
 
 /* LAYOUT */
-.container{max-width:1140px;margin:0 auto;padding:0 40px}
-.eyebrow{font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:14px;display:flex;align-items:center;gap:8px}
-.eyebrow::before{content:'';display:block;width:24px;height:2px;background:var(--blue);border-radius:2px;flex-shrink:0}
-.eyebrow.center{justify-content:center}
-.eyebrow.center::before{display:none}
-.section-title{font-family:var(--serif);font-size:clamp(1.9rem,3vw,2.7rem);font-weight:600;line-height:1.15;letter-spacing:-0.02em;color:var(--navy);margin-bottom:18px}
-.section-title em{font-style:italic;color:var(--blue);font-weight:400}
-.body-text{font-size:0.96rem;font-weight:300;color:var(--text2);line-height:1.8}
+.container{max-width:1200px;margin:0 auto;padding:0 48px}
+.t-eyebrow{font-family:var(--font-body);font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue);display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.t-eyebrow::before{content:'';display:block;width:28px;height:2px;background:var(--blue);border-radius:2px;flex-shrink:0}
+.t-eyebrow.center{justify-content:center}
+.t-eyebrow.center::before{display:none}
+.t-section{font-family:var(--font-head);font-size:var(--h-xl);font-weight:700;line-height:1.12;letter-spacing:-0.02em;color:var(--navy);margin-bottom:18px}
+.t-body{font-family:var(--font-body);font-size:1.1rem;font-weight:300;color:var(--text2);line-height:1.8}
+em.accent{font-style:italic;color:var(--blue);font-weight:inherit}
 
 /* PAGE HERO */
-.page-hero{
-  padding:130px 0 90px;
-  background:linear-gradient(160deg,#e8f2ff 0%,#f0f6ff 40%,#f8fafd 100%);
-  border-bottom:1px solid var(--border);
-  text-align:center;position:relative;overflow:hidden;
+.page-hero{padding:130px 0 90px;background:linear-gradient(155deg,#e8f0fc 0%,#f0f6ff 40%,#f7f9fc 100%);border-bottom:1px solid var(--border);text-align:center;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 60%,rgba(15,95,194,0.06),transparent 70%)}
+.page-title{font-family:var(--font-head);font-size:var(--h-display);font-weight:800;letter-spacing:-0.03em;line-height:1.06;color:var(--navy);margin-bottom:20px}
+.page-title em{font-style:italic;color:var(--blue);font-weight:700}
+.page-sub{font-family:var(--font-body);font-size:1.15rem;font-weight:300;color:var(--text2);max-width:560px;margin:0 auto 40px;line-height:1.75}
+.hero-tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.hero-tab{
+  display:inline-flex;align-items:center;gap:7px;
+  background:var(--white);border:1.5px solid var(--border);border-radius:6px;
+  padding:9px 18px;
+  font-family:var(--font-body);font-size:0.85rem;font-weight:600;
+  color:var(--text2);transition:all .2s;cursor:pointer;
 }
-.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(26,111,212,0.05),transparent 70%)}
-.page-title{font-family:var(--serif);font-size:clamp(2.4rem,5vw,3.8rem);font-weight:600;letter-spacing:-0.02em;line-height:1.1;color:var(--navy);margin-bottom:20px}
-.page-title em{font-style:italic;color:var(--blue);font-weight:400}
-.page-sub{font-size:1.05rem;font-weight:300;color:var(--text2);max-width:520px;margin:0 auto 40px;line-height:1.75}
-.hero-tabs{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.hero-tab{display:inline-flex;align-items:center;gap:6px;background:var(--white);border:1px solid var(--border);border-radius:980px;padding:8px 18px;font-size:0.82rem;font-weight:500;color:var(--text2);transition:all 0.2s;cursor:pointer}
-.hero-tab:hover{border-color:var(--blue);color:var(--blue);background:var(--sky)}
+.hero-tab:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-lt)}
 
-/* SERVICES SUB-NAV */
-.svc-nav{position:sticky;top:64px;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);box-shadow:0 2px 12px rgba(10,34,64,0.05)}
-.svc-nav-inner{max-width:1140px;margin:0 auto;padding:0 40px;display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
+/* SERVICES SUBNAV */
+.svc-nav{position:sticky;top:68px;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);box-shadow:0 2px 10px rgba(11,31,58,0.04)}
+.svc-nav-inner{max-width:1200px;margin:0 auto;padding:0 48px;display:flex;overflow-x:auto;scrollbar-width:none}
 .svc-nav-inner::-webkit-scrollbar{display:none}
-.snav{font-size:0.82rem;font-weight:500;color:var(--muted);padding:16px 20px;white-space:nowrap;border-bottom:2px solid transparent;transition:color 0.2s,border-color 0.2s;cursor:pointer}
+.snav{
+  font-family:var(--font-body);font-size:0.88rem;font-weight:600;
+  color:var(--muted);padding:16px 22px;white-space:nowrap;
+  border-bottom:2px solid transparent;transition:color .2s,border-color .2s;cursor:pointer;
+  letter-spacing:0.01em;
+}
 .snav:hover{color:var(--navy)}
 .snav.active{color:var(--blue);border-bottom-color:var(--blue)}
 
 /* SERVICE SECTIONS */
-.svc-section{padding:100px 0}
+.svc-section{padding:var(--section-pad) 0}
 .svc-section:nth-child(even){background:var(--white)}
 .svc-section:nth-child(odd){background:var(--bg)}
 .svc-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
@@ -89,68 +96,86 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:64px;background:rgba(
 .svc-layout.rev>*{direction:ltr}
 
 /* Visual card */
-.vis-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:36px;box-shadow:var(--shadow)}
+.vis-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:40px;box-shadow:var(--shadow)}
 .svc-section:nth-child(even) .vis-card{background:var(--bg)}
-.vis-icon{font-size:2rem;margin-bottom:20px}
-.vis-plat-label{font-size:0.68rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.vis-icon{font-size:2.2rem;margin-bottom:22px}
+.vis-plat-label{
+  font-family:var(--font-body);font-size:0.7rem;font-weight:700;
+  letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;
+}
 .platforms{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
-.plat{display:inline-flex;align-items:center;gap:6px;background:var(--sky);border:1px solid var(--sky2);border-radius:980px;padding:6px 14px;font-size:0.78rem;font-weight:500;color:var(--navy2)}
-.feat-list{border-top:1px solid var(--border);padding-top:22px;display:flex;flex-direction:column;gap:0}
-.feat{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--bg2)}
+.plat{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--blue-lt);border:1px solid var(--blue-lt2);
+  border-radius:5px;padding:6px 14px;
+  font-family:var(--font-body);font-size:0.8rem;font-weight:600;
+  color:var(--navy2);
+}
+.feat-list{border-top:1px solid var(--border);padding-top:22px}
+.feat{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid rgba(218,226,237,0.5)}
 .feat:last-child{border-bottom:none}
-.feat-check{color:var(--blue);font-size:0.85rem;flex-shrink:0;padding-top:2px;font-weight:700}
-.feat-text{font-size:0.85rem;color:var(--text2);font-weight:300;line-height:1.5}
-.feat-text strong{color:var(--navy);font-weight:600}
+.feat-check{
+  font-family:var(--font-head);color:var(--blue);
+  font-size:0.85rem;font-weight:700;flex-shrink:0;padding-top:2px;
+}
+.feat-text{font-family:var(--font-body);font-size:0.9rem;font-weight:300;color:var(--text2);line-height:1.55}
+.feat-text strong{color:var(--navy);font-weight:700}
 
 /* Detail steps */
 .detail-list{margin-top:32px}
-.detail-item{padding:16px 0;border-bottom:1px solid var(--border);display:flex;gap:16px;align-items:flex-start;transition:border-color 0.2s}
+.detail-item{padding:16px 0;border-bottom:1px solid var(--border);display:flex;gap:16px;align-items:flex-start;transition:border-color .2s}
 .detail-item:last-child{border-bottom:none}
 .detail-item:hover{border-bottom-color:var(--blue)}
-.d-num{width:28px;height:28px;border-radius:8px;background:var(--sky);display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:700;color:var(--blue);flex-shrink:0;margin-top:2px}
-.d-title{font-size:0.93rem;font-weight:600;color:var(--navy);margin-bottom:4px}
-.d-desc{font-size:0.84rem;font-weight:300;color:var(--muted);line-height:1.6}
+.d-num{
+  font-family:var(--font-mono);font-size:0.72rem;font-weight:500;
+  color:var(--blue);background:var(--blue-lt);border-radius:5px;
+  padding:5px 9px;flex-shrink:0;margin-top:3px;letter-spacing:0.05em;
+}
+.d-title{font-family:var(--font-head);font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:4px;letter-spacing:-0.01em}
+.d-desc{font-family:var(--font-body);font-size:0.9rem;font-weight:300;color:var(--muted);line-height:1.65}
 
 /* CTA BAND */
 .cta-band{background:linear-gradient(135deg,var(--navy),var(--navy2));padding:100px 0;text-align:center;position:relative;overflow:hidden}
-.cta-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 70% 50%,rgba(8,145,178,0.2),transparent 65%)}
-.cta-band .eyebrow{color:rgba(255,255,255,0.5);justify-content:center}
-.cta-band .eyebrow::before{display:none}
-.cta-band .page-title{color:#fff;font-size:clamp(2rem,3.5vw,3rem)}
-.cta-band .page-title em{color:#60b4ff}
-.cta-band p{color:rgba(255,255,255,0.6);max-width:480px;margin:14px auto 40px;font-size:0.96rem;line-height:1.75}
-.btn{font-family:var(--sans);font-size:0.9rem;font-weight:600;padding:13px 28px;border-radius:980px;cursor:pointer;border:none;transition:all 0.22s;display:inline-block}
+.cta-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 70% 50%,rgba(2,132,199,0.2),transparent 65%)}
+.cta-band .t-eyebrow{color:rgba(255,255,255,0.45);justify-content:center}
+.cta-band .t-eyebrow::before{display:none}
+.cta-title{font-family:var(--font-head);font-size:clamp(2rem,3.5vw,3rem);font-weight:800;letter-spacing:-0.03em;line-height:1.08;color:#fff;margin-bottom:16px}
+.cta-title em{font-style:italic;color:#60b4ff;font-weight:700}
+.cta-sub{font-family:var(--font-body);font-size:1.1rem;font-weight:300;color:rgba(255,255,255,0.55);max-width:480px;margin:0 auto 44px;line-height:1.7}
+.btn{font-family:var(--font-body);font-size:0.95rem;font-weight:600;padding:14px 30px;border-radius:6px;cursor:pointer;border:none;transition:all .22s;display:inline-block;letter-spacing:0.01em}
 .btn-white{background:#fff;color:var(--navy)}
-.btn-white:hover{background:#e8f2ff;transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.15)}
-.btn-outline{background:transparent;color:rgba(255,255,255,0.8);border:1.5px solid rgba(255,255,255,0.25);margin-left:12px}
-.btn-outline:hover{border-color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.07)}
+.btn-white:hover{background:#e8f0fc;transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.15)}
+.btn-outline-w{background:transparent;color:rgba(255,255,255,0.8);border:2px solid rgba(255,255,255,0.22);margin-left:14px}
+.btn-outline-w:hover{border-color:rgba(255,255,255,0.55);background:rgba(255,255,255,0.07)}
 
 /* FOOTER */
-footer{background:var(--navy);color:rgba(255,255,255,0.65);padding:72px 0 36px}
-.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:56px;margin-bottom:52px}
-.fbrand{display:flex;align-items:center;gap:10px;font-size:1rem;font-weight:700;color:#fff;margin-bottom:14px}
-.fbrand span{color:#60b4ff}
-.footer-tagline{font-size:0.82rem;color:rgba(255,255,255,0.35);line-height:1.7;max-width:230px}
-.footer-col h4{font-size:0.76rem;font-weight:700;color:rgba(255,255,255,0.8);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:16px}
-.footer-col a{display:block;font-size:0.8rem;color:rgba(255,255,255,0.38);font-weight:300;margin-bottom:10px;transition:color 0.2s}
+footer{background:var(--navy);color:rgba(255,255,255,0.55);padding:80px 0 36px}
+.footer-top{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:60px;margin-bottom:56px}
+.footer-brand-row{display:flex;align-items:center;gap:11px;margin-bottom:16px}
+.footer-brand-name{font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:#fff;letter-spacing:-0.02em}
+.footer-brand-name span{color:#60b4ff}
+.footer-tagline{font-family:var(--font-body);font-size:0.85rem;font-weight:300;color:rgba(255,255,255,0.35);line-height:1.7;max-width:240px}
+.footer-col h4{font-family:var(--font-head);font-size:0.78rem;font-weight:700;color:rgba(255,255,255,0.8);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:16px}
+.footer-col a{display:block;font-family:var(--font-body);font-size:0.87rem;font-weight:300;color:rgba(255,255,255,0.38);margin-bottom:10px;transition:color .2s}
 .footer-col a:hover{color:rgba(255,255,255,0.9)}
-.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:28px;display:flex;justify-content:space-between;font-size:0.74rem;color:rgba(255,255,255,0.25)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.07);padding-top:28px;display:flex;justify-content:space-between;font-family:var(--font-body);font-size:0.8rem;font-weight:300;color:rgba(255,255,255,0.22)}
 
 /* REVEAL */
-.reveal{opacity:0;transform:translateY(16px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
-.d1{transition-delay:0.1s}.d2{transition-delay:0.2s}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}
 
 /* RESPONSIVE */
-@media(max-width:1000px){
+@media(max-width:1020px){
   .nav-links{display:none}.hamburger{display:flex}
   .svc-layout,.svc-layout.rev{grid-template-columns:1fr;direction:ltr}
   .footer-top{grid-template-columns:1fr 1fr}
   .footer-bottom{flex-direction:column;gap:8px}
 }
-@media(max-width:600px){
+@media(max-width:640px){
+  :root{--section-pad:72px}
   .footer-top{grid-template-columns:1fr}
-  nav{padding:0 20px}.container{padding:0 20px}
+  nav,footer .container,.container{padding-left:20px;padding-right:20px}
   .svc-nav-inner{padding:0 20px}
 }
 </style>
@@ -169,7 +194,7 @@ footer{background:var(--navy);color:rgba(255,255,255,0.65);padding:72px 0 36px}
     <a href="index.html#contact">Contact</a>
   </div>
   <div class="nav-right">
-    <a href="index.html#contact" class="nav-cta">Get in touch</a>
+    <a href="index.html#contact" class="nav-cta">Get in Touch</a>
     <div class="hamburger" onclick="toggleMobile()"><span></span><span></span><span></span></div>
   </div>
 </nav>
@@ -183,8 +208,8 @@ footer{background:var(--navy);color:rgba(255,255,255,0.65);padding:72px 0 36px}
 <!-- PAGE HERO -->
 <div class="page-hero">
   <div class="container">
-    <div class="eyebrow center reveal">Our services</div>
-    <h1 class="page-title reveal">Everything your business needs,<br/><em>handled with expertise.</em></h1>
+    <div class="t-eyebrow center reveal">Our Services</div>
+    <h1 class="page-title reveal">Everything your business needs,<br/><em>delivered with expertise.</em></h1>
     <p class="page-sub reveal">Six practice areas. One trusted partner. Certified specialists in every domain.</p>
     <div class="hero-tabs reveal">
       <div class="hero-tab" onclick="scrollTo2('cloud')">☁️ Cloud</div>
@@ -197,7 +222,7 @@ footer{background:var(--navy);color:rgba(255,255,255,0.65);padding:72px 0 36px}
   </div>
 </div>
 
-<!-- STICKY NAV -->
+<!-- STICKY SUB-NAV -->
 <div class="svc-nav">
   <div class="svc-nav-inner">
     <div class="snav active" onclick="scrollTo2('cloud')">Cloud Services</div>
@@ -214,9 +239,9 @@ footer{background:var(--navy);color:rgba(255,255,255,0.65);padding:72px 0 36px}
   <div class="container">
     <div class="svc-layout">
       <div>
-        <div class="eyebrow reveal">Cloud Services</div>
-        <h2 class="section-title reveal d1">Scale with confidence<br/><em>on AWS and Azure.</em></h2>
-        <p class="body-text reveal d1">We design, migrate, and manage cloud infrastructure across Amazon Web Services and Microsoft Azure — giving your business the scalability, reliability, and performance it needs to grow without limits.</p>
+        <div class="t-eyebrow reveal">Cloud Services</div>
+        <h2 class="t-section reveal d1">Scale with confidence<br/><em class="accent">on AWS and Azure.</em></h2>
+        <p class="t-body reveal d1">We design, migrate, and manage cloud infrastructure across Amazon Web Services and Microsoft Azure — giving your business the scalability, reliability, and performance it needs to grow without limits.</p>
         <div class="detail-list reveal d2">
           <div class="detail-item"><div class="d-num">01</div><div><div class="d-title">Cloud Architecture & Design</div><div class="d-desc">Resilient, cost-effective environments built to your exact workload requirements.</div></div></div>
           <div class="detail-item"><div class="d-num">02</div><div><div class="d-title">Migration & Lift-and-Shift</div><div class="d-desc">Seamless migration from on-premise or legacy systems with minimal disruption.</div></div></div>
@@ -228,13 +253,7 @@ footer{background:var(--navy);color:rgba(255,255,255,0.65);padding:72px 0 36px}
         <div class="vis-card">
           <div class="vis-icon">☁️</div>
           <div class="vis-plat-label">Platforms we work with</div>
-          <div class="platforms">
-            <div class="plat">🟠 Amazon AWS</div>
-            <div class="plat">🔵 Microsoft Azure</div>
-            <div class="plat">📦 S3 & Blob Storage</div>
-            <div class="plat">⚙️ Azure DevOps</div>
-            <div class="plat">🔁 Serverless</div>
-          </div>
+          <div class="platforms"><div class="plat">🟠 Amazon AWS</div><div class="plat">🔵 Microsoft Azure</div><div class="plat">📦 S3 & Blob Storage</div><div class="plat">⚙️ Azure DevOps</div><div class="plat">🔁 Serverless</div></div>
           <div class="feat-list">
             <div class="feat"><div class="feat-check">✓</div><div class="feat-text"><strong>99.9% uptime SLA</strong> on all managed cloud environments</div></div>
             <div class="feat"><div class="feat-check">✓</div><div class="feat-text"><strong>AWS & Azure certified</strong> architects on every project</div></div>
@@ -252,9 +271,9 @@ footer{background:var(--navy);color:rgba(255,255,255,0.65);padding:72px 0 36px}
   <div class="container">
     <div class="svc-layout rev">
       <div>
-        <div class="eyebrow reveal">Website Building</div>
-        <h2 class="section-title reveal d1">Beautiful websites that<br/><em>work as hard as you do.</em></h2>
-        <p class="body-text reveal d1">We build professional, high-performance websites and digital experiences using the right tool for your needs — from rapid-launch platforms to fully bespoke Figma-designed builds. Fast, accessible, and built to convert.</p>
+        <div class="t-eyebrow reveal">Website Building</div>
+        <h2 class="t-section reveal d1">Beautiful websites that<br/><em class="accent">work as hard as you do.</em></h2>
+        <p class="t-body reveal d1">We build professional, high-performance websites and digital experiences using the right tool for your needs — from rapid-launch platforms to fully bespoke Figma-designed builds. Fast, accessible, and built to convert.</p>
         <div class="detail-list reveal d2">
           <div class="detail-item"><div class="d-num">01</div><div><div class="d-title">Design & Prototyping</div><div class="d-desc">Detailed Figma wireframes and prototypes before a line of code is written.</div></div></div>
           <div class="detail-item"><div class="d-num">02</div><div><div class="d-title">CMS Development</div><div class="d-desc">Custom WordPress themes built for performance, security, and ease of use.</div></div></div>
@@ -265,14 +284,8 @@ footer{background:var(--navy);color:rgba(255,255,255,0.65);padding:72px 0 36px}
       <div class="reveal d1">
         <div class="vis-card">
           <div class="vis-icon">🌐</div>
-          <div class="vis-plat-label">Tools & platforms</div>
-          <div class="platforms">
-            <div class="plat">📝 WordPress</div>
-            <div class="plat">🎨 Figma</div>
-            <div class="plat">🟢 Wix</div>
-            <div class="plat">🛒 WooCommerce</div>
-            <div class="plat">⚡ Custom Dev</div>
-          </div>
+          <div class="vis-plat-label">Tools & Platforms</div>
+          <div class="platforms"><div class="plat">📝 WordPress</div><div class="plat">🎨 Figma</div><div class="plat">🟢 Wix</div><div class="plat">🛒 WooCommerce</div><div class="plat">⚡ Custom Dev</div></div>
           <div class="feat-list">
             <div class="feat"><div class="feat-check">✓</div><div class="feat-text"><strong>Mobile-first</strong> responsive design on every project</div></div>
             <div class="feat"><div class="feat-check">✓</div><div class="feat-text"><strong>WCAG accessibility</strong> standards met as standard</div></div>
@@ -290,9 +303,9 @@ footer{background:var(--navy);color:rgba(255,255,255,0.65);padding:72px 0 36px}
   <div class="container">
     <div class="svc-layout">
       <div>
-        <div class="eyebrow reveal">Managed Desktops</div>
-        <h2 class="section-title reveal d1">Complete IT management,<br/><em>from device to desk.</em></h2>
-        <p class="body-text reveal d1">We take full ownership of your end-user computing environment — from device procurement and deployment through to day-to-day support and lifecycle management. Your team stays productive; we handle the rest.</p>
+        <div class="t-eyebrow reveal">Managed Desktops</div>
+        <h2 class="t-section reveal d1">Complete IT management,<br/><em class="accent">from device to desk.</em></h2>
+        <p class="t-body reveal d1">We take full ownership of your end-user computing environment — from device procurement and deployment through to day-to-day support and lifecycle management. Your team stays productive; we handle the rest.</p>
         <div class="detail-list reveal d2">
           <div class="detail-item"><div class="d-num">01</div><div><div class="d-title">Device Procurement & Provisioning</div><div class="d-desc">We source, configure, and ship devices ready to use — zero-touch deployment as standard.</div></div></div>
           <div class="detail-item"><div class="d-num">02</div><div><div class="d-title">Patch Management & Updates</div><div class="d-desc">Automated, policy-driven patching to keep every endpoint current and secure.</div></div></div>
@@ -303,14 +316,8 @@ footer{background:var(--navy);color:rgba(255,255,255,0.65);padding:72px 0 36px}
       <div class="reveal d1">
         <div class="vis-card">
           <div class="vis-icon">🖥️</div>
-          <div class="vis-plat-label">What's included</div>
-          <div class="platforms">
-            <div class="plat">🪟 Windows</div>
-            <div class="plat">🍎 macOS</div>
-            <div class="plat">📱 Mobile MDM</div>
-            <div class="plat">☁️ Intune / JAMF</div>
-            <div class="plat">🔐 BitLocker</div>
-          </div>
+          <div class="vis-plat-label">What's Included</div>
+          <div class="platforms"><div class="plat">🪟 Windows</div><div class="plat">🍎 macOS</div><div class="plat">📱 Mobile MDM</div><div class="plat">☁️ Intune / JAMF</div><div class="plat">🔐 BitLocker</div></div>
           <div class="feat-list">
             <div class="feat"><div class="feat-check">✓</div><div class="feat-text"><strong>Endpoint monitoring</strong> with real-time health dashboards</div></div>
             <div class="feat"><div class="feat-check">✓</div><div class="feat-text"><strong>Software deployment</strong> and licence management</div></div>
@@ -328,9 +335,9 @@ footer{background:var(--navy);color:rgba(255,255,255,0.65);padding:72px 0 36px}
   <div class="container">
     <div class="svc-layout rev">
       <div>
-        <div class="eyebrow reveal">Cyber Security</div>
-        <h2 class="section-title reveal d1">Protection built in,<br/><em>not bolted on.</em></h2>
-        <p class="body-text reveal d1">Our security practice delivers multi-layered protection across your cloud environments and endpoints. Using industry-leading tools including Rapid7, we identify vulnerabilities, respond to threats, and keep your organisation resilient.</p>
+        <div class="t-eyebrow reveal">Cyber Security</div>
+        <h2 class="t-section reveal d1">Protection built in,<br/><em class="accent">not bolted on.</em></h2>
+        <p class="t-body reveal d1">Our security practice delivers multi-layered protection across your cloud environments and endpoints. Using industry-leading tools including Rapid7, we identify vulnerabilities, respond to threats, and keep your organisation resilient.</p>
         <div class="detail-list reveal d2">
           <div class="detail-item"><div class="d-num">01</div><div><div class="d-title">Security Assessments & Audits</div><div class="d-desc">Comprehensive reviews of your current posture — finding gaps before attackers do.</div></div></div>
           <div class="detail-item"><div class="d-num">02</div><div><div class="d-title">Cloud Security (CSPM)</div><div class="d-desc">Continuous posture management for AWS and Azure to catch misconfigurations early.</div></div></div>
@@ -341,14 +348,8 @@ footer{background:var(--navy);color:rgba(255,255,255,0.65);padding:72px 0 36px}
       <div class="reveal d1">
         <div class="vis-card">
           <div class="vis-icon">🛡️</div>
-          <div class="vis-plat-label">Tools & frameworks</div>
-          <div class="platforms">
-            <div class="plat">🔴 Rapid7 InsightVM</div>
-            <div class="plat">🔎 Rapid7 MDR</div>
-            <div class="plat">☁️ Cloud CSPM</div>
-            <div class="plat">📋 ISO 27001</div>
-            <div class="plat">🧱 Zero Trust</div>
-          </div>
+          <div class="vis-plat-label">Tools & Frameworks</div>
+          <div class="platforms"><div class="plat">🔴 Rapid7 InsightVM</div><div class="plat">🔎 Rapid7 MDR</div><div class="plat">☁️ Cloud CSPM</div><div class="plat">📋 ISO 27001</div><div class="plat">🧱 Zero Trust</div></div>
           <div class="feat-list">
             <div class="feat"><div class="feat-check">✓</div><div class="feat-text"><strong>CISSP & CEH</strong> certified security professionals</div></div>
             <div class="feat"><div class="feat-check">✓</div><div class="feat-text"><strong>Vulnerability scanning</strong> with prioritised remediation plans</div></div>
@@ -366,9 +367,9 @@ footer{background:var(--navy);color:rgba(255,255,255,0.65);padding:72px 0 36px}
   <div class="container">
     <div class="svc-layout">
       <div>
-        <div class="eyebrow reveal">Microsoft Dynamics ERP</div>
-        <h2 class="section-title reveal d1">Your operations, unified<br/><em>in one platform.</em></h2>
-        <p class="body-text reveal d1">We implement, customise, and support Microsoft Dynamics 365 solutions that connect finance, supply chain, HR, and customer engagement — giving your leadership a single, real-time view of the business.</p>
+        <div class="t-eyebrow reveal">Microsoft Dynamics ERP</div>
+        <h2 class="t-section reveal d1">Your operations, unified<br/><em class="accent">in one platform.</em></h2>
+        <p class="t-body reveal d1">We implement, customise, and support Microsoft Dynamics 365 solutions that connect finance, supply chain, HR, and customer engagement — giving your leadership a single, real-time view of the business.</p>
         <div class="detail-list reveal d2">
           <div class="detail-item"><div class="d-num">01</div><div><div class="d-title">ERP Implementation</div><div class="d-desc">End-to-end Dynamics 365 deployment with process mapping, configuration, and data migration.</div></div></div>
           <div class="detail-item"><div class="d-num">02</div><div><div class="d-title">Customisation & Integration</div><div class="d-desc">Tailored modules and seamless integration with third-party systems and Microsoft 365.</div></div></div>
@@ -379,14 +380,8 @@ footer{background:var(--navy);color:rgba(255,255,255,0.65);padding:72px 0 36px}
       <div class="reveal d1">
         <div class="vis-card">
           <div class="vis-icon">📊</div>
-          <div class="vis-plat-label">Modules & tools</div>
-          <div class="platforms">
-            <div class="plat">🟣 Dynamics 365</div>
-            <div class="plat">💰 Finance & Ops</div>
-            <div class="plat">🤝 Sales & CRM</div>
-            <div class="plat">📦 Supply Chain</div>
-            <div class="plat">📊 Power BI</div>
-          </div>
+          <div class="vis-plat-label">Modules & Tools</div>
+          <div class="platforms"><div class="plat">🟣 Dynamics 365</div><div class="plat">💰 Finance & Ops</div><div class="plat">🤝 Sales & CRM</div><div class="plat">📦 Supply Chain</div><div class="plat">📊 Power BI</div></div>
           <div class="feat-list">
             <div class="feat"><div class="feat-check">✓</div><div class="feat-text"><strong>Microsoft certified</strong> Dynamics consultants on every project</div></div>
             <div class="feat"><div class="feat-check">✓</div><div class="feat-text"><strong>Data migration</strong> from legacy ERP and spreadsheet systems</div></div>
@@ -404,9 +399,9 @@ footer{background:var(--navy);color:rgba(255,255,255,0.65);padding:72px 0 36px}
   <div class="container">
     <div class="svc-layout rev">
       <div>
-        <div class="eyebrow reveal">Training & Enablement</div>
-        <h2 class="section-title reveal d1">Empower your people<br/><em>to own the technology.</em></h2>
-        <p class="body-text reveal d1">Technology is only as good as the people using it. Our training programmes build genuine competence across cloud platforms and ERP systems — delivered in formats that work for your organisation, anywhere in the world.</p>
+        <div class="t-eyebrow reveal">Training &amp; Enablement</div>
+        <h2 class="t-section reveal d1">Empower your people<br/><em class="accent">to own the technology.</em></h2>
+        <p class="t-body reveal d1">Technology is only as good as the people using it. Our training programmes build genuine competence across cloud platforms and ERP systems — delivered in formats that work for your organisation, anywhere in the world.</p>
         <div class="detail-list reveal d2">
           <div class="detail-item"><div class="d-num">01</div><div><div class="d-title">Cloud Foundations & Certification</div><div class="d-desc">Instructor-led and self-paced training covering AWS and Azure from associate to professional level.</div></div></div>
           <div class="detail-item"><div class="d-num">02</div><div><div class="d-title">Microsoft Dynamics ERP Training</div><div class="d-desc">Role-based training for finance, operations, sales, and admin teams using Dynamics 365.</div></div></div>
@@ -417,14 +412,8 @@ footer{background:var(--navy);color:rgba(255,255,255,0.65);padding:72px 0 36px}
       <div class="reveal d1">
         <div class="vis-card">
           <div class="vis-icon">🎓</div>
-          <div class="vis-plat-label">Training areas</div>
-          <div class="platforms">
-            <div class="plat">🟠 AWS Training</div>
-            <div class="plat">🔵 Azure Training</div>
-            <div class="plat">🟣 Dynamics 365</div>
-            <div class="plat">🔒 Security Awareness</div>
-            <div class="plat">📹 On-demand</div>
-          </div>
+          <div class="vis-plat-label">Training Areas</div>
+          <div class="platforms"><div class="plat">🟠 AWS Training</div><div class="plat">🔵 Azure Training</div><div class="plat">🟣 Dynamics 365</div><div class="plat">🔒 Security Awareness</div><div class="plat">📹 On-demand</div></div>
           <div class="feat-list">
             <div class="feat"><div class="feat-check">✓</div><div class="feat-text"><strong>500+ professionals</strong> certified through our programmes</div></div>
             <div class="feat"><div class="feat-check">✓</div><div class="feat-text"><strong>Small group sessions</strong> for maximum engagement and learning</div></div>
@@ -440,12 +429,12 @@ footer{background:var(--navy);color:rgba(255,255,255,0.65);padding:72px 0 36px}
 <!-- CTA BAND -->
 <div class="cta-band">
   <div class="container">
-    <div class="eyebrow reveal">Ready to get started?</div>
-    <h2 class="page-title reveal d1">The right expertise is<br/><em>one conversation away.</em></h2>
-    <p class="reveal d1">Tell us about your challenge and one of our specialists will be in touch within one business day.</p>
+    <div class="t-eyebrow center reveal" style="color:rgba(255,255,255,0.45)">Ready to Get Started?</div>
+    <h2 class="cta-title reveal d1">The right expertise is<br/><em>one conversation away.</em></h2>
+    <p class="cta-sub reveal d1">Tell us about your challenge and one of our specialists will be in touch within one business day.</p>
     <div class="reveal d2">
-      <a href="index.html#contact" class="btn btn-white">Talk to an expert</a>
-      <a href="index.html" class="btn btn-outline">Back to home</a>
+      <a href="index.html#contact" class="btn btn-white">Talk to an Expert</a>
+      <a href="index.html" class="btn btn-outline-w">Back to Home</a>
     </div>
   </div>
 </div>
@@ -455,15 +444,15 @@ footer{background:var(--navy);color:rgba(255,255,255,0.65);padding:72px 0 36px}
   <div class="container">
     <div class="footer-top">
       <div>
-        <div class="fbrand">
-          <div style="width:32px;height:32px;background:linear-gradient(135deg,#1a6fd4,#0891b2);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.85rem;font-weight:700;flex-shrink:0">IS</div>
-          Innowise <span>Solutions</span>
+        <div class="footer-brand-row">
+          <div class="logo-mark">IS</div>
+          <div class="footer-brand-name">Innowise <span>Solutions</span></div>
         </div>
         <p class="footer-tagline">Smart technology for forward-thinking organisations. Cloud, security, ERP, and more.</p>
       </div>
       <div class="footer-col"><h4>Company</h4><a href="index.html#about">About</a><a href="index.html#team">Team</a><a href="index.html#contact">Contact</a></div>
       <div class="footer-col"><h4>Services</h4><a href="#cloud">Cloud</a><a href="#web">Websites</a><a href="#desktop">Managed Desktops</a><a href="#security">Cyber Security</a><a href="#erp">Dynamics ERP</a><a href="#training">Training</a></div>
-      <div class="footer-col"><h4>Contact</h4><a href="mailto:hello@innowisesolutions.co.uk">hello@innowisesolutions.co.uk</a><a href="tel:+441610000000">+44 161 000 0000</a><a href="index.html#contact">Book a consultation</a></div>
+      <div class="footer-col"><h4>Contact</h4><a href="mailto:hello@innowisesolutions.co.uk">hello@innowisesolutions.co.uk</a><a href="tel:+441610000000">+44 161 000 0000</a><a href="index.html#contact">Book a Consultation</a></div>
     </div>
     <div class="footer-bottom">
       <span>© 2025 Innowise Solutions Ltd. All rights reserved.</span>
