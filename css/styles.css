@@ -143,11 +143,6 @@ h1, h2, h3, h4, h5 {
   color: var(--white);
 }
 
-.header.transparent .header__logo-icon {
-  background: var(--white);
-  color: var(--black);
-}
-
 .header.transparent .header__btn {
   border-color: rgba(255,255,255,0.4);
 }
@@ -170,11 +165,6 @@ h1, h2, h3, h4, h5 {
 .header.scrolled .header__menu-btn,
 .header.scrolled .header__btn {
   color: var(--black);
-}
-
-.header.scrolled .header__logo-icon {
-  background: var(--accent);
-  color: var(--white);
 }
 
 .header.scrolled .header__btn {
@@ -206,14 +196,7 @@ h1, h2, h3, h4, h5 {
 .header__logo-icon {
   width: 36px;
   height: 36px;
-  background: var(--accent);
   border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--white);
-  font-weight: 600;
-  font-size: 0.875rem;
   transition: transform var(--transition-bounce), box-shadow var(--transition);
 }
 
