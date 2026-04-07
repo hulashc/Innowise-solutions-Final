@@ -190,15 +190,15 @@ h1, h2, h3, h4, h5 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  height: 100px;
 }
 
 .header__logo {
   display: flex;
   align-items: center;
-  gap: 16px;
-  font-size: 1.25rem;
-  font-weight: 500;
+  gap: 14px;
+  font-size: 1.5rem;
+  font-weight: 600;
   color: var(--accent);
   letter-spacing: -0.01em;
   transition: transform var(--transition), color var(--transition);
@@ -209,7 +209,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .header__logo-icon {
-  height: 40px;
+  height: 52px;
   width: auto;
   border-radius: var(--radius-sm);
   transition: transform 0.3s ease-in-out;
@@ -222,16 +222,38 @@ h1, h2, h3, h4, h5 {
 .header__nav {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 48px;
 }
 
 .header__nav-link {
-  font-size: 1rem;
+  font-size: 1.125rem;
   font-weight: 500;
   color: var(--gray-700);
   transition: all var(--transition);
   position: relative;
-  overflow: hidden;
+  padding: 12px 0;
+}
+
+.header__nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--transition);
+}
+
+.header__nav-link:hover {
+  color: var(--accent);
+}
+
+.header__nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .header__nav-link::after {
@@ -266,8 +288,8 @@ h1, h2, h3, h4, h5 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 24px;
-  font-size: 0.9375rem;
+  padding: 16px 32px;
+  font-size: 1.0625rem;
   font-weight: 500;
   color: var(--black);
   border: 1px solid var(--gray-300);
@@ -342,7 +364,7 @@ h1, h2, h3, h4, h5 {
   .mobile-nav {
     display: none;
     position: fixed;
-    top: 70px;
+    top: 100px;
     left: 0;
     right: 0;
     background: #ffffff;
@@ -361,7 +383,7 @@ h1, h2, h3, h4, h5 {
     font-size: 1.125rem;
     font-weight: 500;
     color: #000000;
-    padding: 16px 0;
+    padding: 20px 0;
     border-bottom: 1px solid #e6e6e6;
     display: block;
     width: 100%;
@@ -377,11 +399,12 @@ h1, h2, h3, h4, h5 {
     display: block;
     text-align: center;
     margin-top: 16px;
-    padding: 14px 24px;
+    padding: 18px 28px;
     background: #007FFF;
     color: #ffffff;
     border-radius: 4px;
     font-weight: 500;
+    font-size: 1.125rem;
     text-decoration: none;
   }
 }
@@ -839,11 +862,48 @@ h1, h2, h3, h4, h5 {
 
 .hero__actions {
   display: flex;
-  gap: 16px;
+  gap: 20px;
   flex-wrap: wrap;
   opacity: 0;
   transform: translateY(30px);
   animation: heroFadeInUp 0.8s 0.8s forwards;
+}
+
+.hero__actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px 36px;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn--white {
+  background: var(--white);
+  color: var(--black);
+  border: 2px solid var(--white);
+}
+
+.btn--white:hover {
+  background: transparent;
+  color: var(--white);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.btn--outline:hover {
+  background: var(--white);
+  color: var(--black);
+  border-color: var(--white);
 }
 
 @keyframes heroFadeInUp {
@@ -897,8 +957,17 @@ h1, h2, h3, h4, h5 {
 @media (max-width: 768px) {
   .hero__description { font-size: 1rem; }
   .hero__title { font-size: 2rem; }
-  .hero__actions { flex-direction: column; gap: 12px; }
-  .hero__actions .btn { width: 100%; justify-content: center; }
+  .hero__actions { 
+    flex-direction: column; 
+    gap: 16px; 
+    width: 100%;
+  }
+  
+  .hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 16px 24px;
+  }
 }
 
 @media (max-width: 640px) {
