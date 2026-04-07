@@ -4,6 +4,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
+  initMobileMenu();
   initScrollReveal();
   initContactForm();
 });
@@ -25,6 +26,26 @@ function initNavigation() {
   updateHeader();
   
   window.addEventListener('scroll', updateHeader, { passive: true });
+}
+
+function initMobileMenu() {
+  const menuBtn = document.querySelector('.header__menu-btn');
+  const nav = document.querySelector('.header__nav');
+  const navLinks = document.querySelectorAll('.header__nav-link');
+  
+  if (!menuBtn || !nav) return;
+  
+  menuBtn.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    menuBtn.classList.toggle('active');
+  });
+  
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('active');
+      menuBtn.classList.remove('active');
+    });
+  });
 }
 
 function initScrollReveal() {
