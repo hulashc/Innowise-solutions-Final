@@ -1347,7 +1347,7 @@ h1, h2, h3, h4, h5 {
 /* ── CASES ── */
 .cases__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
 
@@ -1451,6 +1451,57 @@ h1, h2, h3, h4, h5 {
 
 @media (max-width: 640px) {
   .cases__grid { grid-template-columns: 1fr; }
+}
+
+/* ── TESTIMONIAL ── */
+.testimonial {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.testimonial__content {
+  position: relative;
+  padding: 0 40px;
+}
+
+.testimonial__icon {
+  width: 48px;
+  height: 48px;
+  fill: var(--accent);
+  margin-bottom: 24px;
+  opacity: 0.6;
+}
+
+.testimonial__text {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--gray-800);
+  margin-bottom: 32px;
+  font-style: italic;
+}
+
+.testimonial__author {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.testimonial__name {
+  font-weight: 600;
+  color: var(--black);
+  font-size: 1rem;
+}
+
+.testimonial__company {
+  color: var(--gray-500);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 640px) {
+  .testimonial__text { font-size: 1.125rem; }
+  .testimonial__content { padding: 0 20px; }
 }
 
 /* ── TEAM ── */
