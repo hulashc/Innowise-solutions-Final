@@ -30,19 +30,19 @@ function initNavigation() {
 
 function initMobileMenu() {
   const menuBtn = document.querySelector('.header__menu-btn');
-  const nav = document.querySelector('.header__nav');
-  const navLinks = document.querySelectorAll('.header__nav-link');
+  const mobileNav = document.querySelector('.mobile-nav');
+  const navLinks = document.querySelectorAll('.mobile-nav .header__nav-link');
   
-  if (!menuBtn || !nav) return;
+  if (!menuBtn || !mobileNav) return;
   
   menuBtn.addEventListener('click', () => {
-    nav.classList.toggle('active');
+    mobileNav.classList.toggle('active');
     menuBtn.classList.toggle('active');
   });
   
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
-      nav.classList.remove('active');
+      mobileNav.classList.remove('active');
       menuBtn.classList.remove('active');
     });
   });
