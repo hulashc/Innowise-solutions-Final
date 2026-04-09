@@ -669,28 +669,28 @@
 
         <div class="contact__form reveal reveal-delay-2">
           <h3 class="contact__form-title">Send Us a Message</h3>
-          <form id="contactForm">
+          <form action="https://formspree.io/f/mjgpdpyv" method="POST" id="contactForm">
             <div class="form__grid">
               <div class="form__group">
                 <label class="form__label" for="firstName">First Name</label>
-                <input type="text" id="firstName" class="form__input" placeholder="John" required>
+                <input type="text" id="firstName" name="firstName" class="form__input" placeholder="John" required>
               </div>
               <div class="form__group">
                 <label class="form__label" for="lastName">Last Name</label>
-                <input type="text" id="lastName" class="form__input" placeholder="Smith" required>
+                <input type="text" id="lastName" name="lastName" class="form__input" placeholder="Smith" required>
               </div>
             </div>
             <div class="form__group">
               <label class="form__label" for="email">Work Email</label>
-              <input type="email" id="email" class="form__input" placeholder="john@company.com" required>
+              <input type="email" id="email" name="email" class="form__input" placeholder="john@company.com" required>
             </div>
             <div class="form__group">
               <label class="form__label" for="company">Company</label>
-              <input type="text" id="company" class="form__input" placeholder="Your Company Ltd">
+              <input type="text" id="company" name="company" class="form__input" placeholder="Your Company Ltd">
             </div>
             <div class="form__group">
               <label class="form__label" for="service">Service of Interest</label>
-              <select id="service" class="form__select">
+              <select id="service" name="service" class="form__select">
                 <option value="">Select a service…</option>
                 <option>Cloud Services (AWS / Azure)</option>
                 <option>Website Building</option>
@@ -703,7 +703,7 @@
             </div>
             <div class="form__group">
               <label class="form__label" for="message">Message</label>
-              <textarea id="message" class="form__textarea"
+              <textarea id="message" name="message" class="form__textarea"
                 placeholder="Tell us about your project or challenge…"></textarea>
             </div>
             <button type="submit" class="form__btn">Send Message</button>

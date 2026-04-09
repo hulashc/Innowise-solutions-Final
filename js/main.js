@@ -71,19 +71,49 @@ function initScrollReveal() {
 function initContactForm() {
   const form = document.getElementById('contactForm');
   const successMessage = document.getElementById('formSuccess');
+  const submitBtn = form?.querySelector('button[type="submit"]');
   
   if (!form) return;
   
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    if (successMessage) {
-      successMessage.style.display = 'block';
-      form.reset();
+    const originalText = submitBtn?.textContent;
+    if (submitBtn) {
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+    }
+    
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
       
-      setTimeout(() => {
-        successMessage.style.display = 'none';
-      }, 5000);
+      if (response.ok) {
+        if (successMessage) {
+          successMessage.style.display = 'block';
+        }
+        form.reset();
+        
+        setTimeout(() => {
+          if (successMessage) {
+            successMessage.style.display = 'none';
+          }
+        }, 5000);
+      } else {
+        console.error('Form submission failed');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+    } finally {
+      if (submitBtn) {
+        submitBtn.textContent = originalText || 'Send Message';
+        submitBtn.disabled = false;
+      }
     }
   });
 }
