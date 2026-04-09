@@ -75,8 +75,11 @@ function initContactForm() {
   
   if (!form) return;
   
+  console.log('Form found, setting up submit handler');
+  
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    console.log('Form submitted, sending to Formspree...');
     
     const originalText = submitBtn?.textContent;
     if (submitBtn) {
@@ -85,15 +88,20 @@ function initContactForm() {
     }
     
     try {
+      const formData = new FormData(form);
+      console.log('Form data:', Object.fromEntries(formData));
+      console.log('Form action:', form.action);
+      
       const response = await fetch(form.action, {
         method: 'POST',
-        body: new FormData(form),
-        headers: {
-          'Accept': 'application/json'
-        }
+        body: formData
       });
       
-      if (response.ok) {
+      console.log('Response status:', response.status);
+      console.log('Response ok:', response.ok);
+      
+      if (response.ok || response.status === 200) {
+        console.log('Form submitted successfully!');
         if (successMessage) {
           successMessage.style.display = 'block';
         }
@@ -105,10 +113,13 @@ function initContactForm() {
           }
         }, 5000);
       } else {
-        console.error('Form submission failed');
+        const errorText = await response.text();
+        console.error('Form submission failed:', response.status, errorText);
+        alert('Something went wrong. Please try again or email us directly.');
       }
     } catch (error) {
       console.error('Form submission error:', error);
+      alert('Network error. Please check your connection and try again.');
     } finally {
       if (submitBtn) {
         submitBtn.textContent = originalText || 'Send Message';
